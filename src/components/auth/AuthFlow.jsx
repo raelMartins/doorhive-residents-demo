@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CompleteSignupForm } from './sections/CompleteSignupForm';
 import { PasswordForm } from './sections/PasswordForm';
+import { DownloadAppScreen } from './sections/DownloadAppScreen';
 import { useFormik } from 'formik';
 import { useMutation } from '@tanstack/react-query';
 import { completeRegistrationDetails } from '@/api/auth';
@@ -10,7 +11,7 @@ import { RESIDENCE_URL } from '@/constants/domain';
 import { setCookie } from 'cookies-next';
 import { useToast } from '@chakra-ui/react';
 
-export const AuthFlow = ({ details, token }) => {
+export const AuthFlow = ({ details, token, setRegistrationComplete }) => {
   const [step, setStep] = useState(`info`);
   const toast = useToast();
 
@@ -33,6 +34,8 @@ export const AuthFlow = ({ details, token }) => {
         position: `top-right`,
         duration: 5000
       });
+      setStep('success');
+      setRegistrationComplete(true);
     },
     onError: (err) => {
       console.log({ err });
@@ -62,7 +65,8 @@ export const AuthFlow = ({ details, token }) => {
     info: (
       <CompleteSignupForm formik={formik} next={() => setStep(`password`)} />
     ),
-    password: <PasswordForm formik={formik} isLoading={isPending} />
+    password: <PasswordForm formik={formik} isLoading={isPending} />,
+    success: <DownloadAppScreen />
   }[step];
   return screen;
 };

@@ -1,9 +1,9 @@
-import { BaseURL_TWO } from '@/constants/domain';
+import { BASE_URL } from '@/constants/domain';
 import axios from 'axios';
 import { getCookie } from 'cookies-next';
 
 const axiosInstance = axios.create({
-  baseURL: BaseURL_TWO,
+  baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
   timeout: 30 * 60 * 1000
 });

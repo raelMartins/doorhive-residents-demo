@@ -5,7 +5,7 @@ export const colors = {
     background: { 1: `#F5F5F5`, 2: `#FFFFFF`, 3: `#FCFCFC`, 4: `#d5d5d5` },
     //prettier-ignore
     text: {1: '#000000', 2: '#141414', 3: `#71717a`, 4: `#424242`, 5: `#4B4B4B`},
-    border_color: { 1: `#f4f4f4`, 2: `#D6D6D6` },
+    border_color: { 1: `#E4E4E7`, 2: `#D6D6D6` },
     form: { label: `#A3A3A3`, color: `#292929` }
   },
   dark: {
@@ -41,7 +41,7 @@ export const colors = {
     background: { 1: `#FAFAFA`, 2: `#FFFFFF`, 3: `#F5F5F5`, 4: `#d5d5d5` },
     //prettier-ignore
     text: { 1: '#FFFFFF', 2: '#F4F4F4', 3: '#F0F0F0', 4: `#747474`, 5: `#4B4B4B`},
-    border_color: { 1: `#E4E4E4`, 2: `#D6D6D6` },
+    border_color: { 1: `#E4E4E7`, 2: `#D6D6D6` },
     form: { label: `#606060`, color: `#919191` }
   }
 };

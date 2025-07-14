@@ -1,3 +1,5 @@
+import { getResidentPlatformByDomain } from '@/api/auth';
+import { RESIDENCE_URL } from '@/constants/domain';
 import '@/styles/globals.css';
 import { geistMono, geistSans, sfPro } from '@/utils/fonts';
 import { Providers } from '@/utils/providers';
@@ -82,7 +84,16 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  let community;
+  const domain = RESIDENCE_URL;
+  try {
+    const res = await getResidentPlatformByDomain(domain);
+    console.log({ res });
+    community = res?.data;
+  } catch (err) {
+    console.log({ err });
+  }
   return (
     <html lang='en'>
       <body
