@@ -18,12 +18,14 @@ import { useState } from 'react';
 export const CompleteRegistrationPage = ({ details, community, token }) => {
   const [registrationComplete, setRegistrationComplete] = useState(false);
   return (
-    <Box
+    <Stack
       bg={`background.1`}
       minH={`100vh`}
+      w={`100%`}
       padding={{ base: `16px`, md: `40px`, lg: `100px` }}
+      pb={{ base: `16px`, md: `20px`, lg: `30px` }}
     >
-      <Center w={`100%`} minH={`589px`}>
+      <Center w={`100%`} flex={`1`}>
         <Box
           bg={`background.2`}
           maxWidth={`1170px`}
@@ -33,7 +35,7 @@ export const CompleteRegistrationPage = ({ details, community, token }) => {
           borderRadius={`24px`}
         >
           {!details ? (
-            <Center minH={`570px`} flexDir={`column`}>
+            <Center minH={`400px`} flexDir={`column`}>
               <PiWarningCircle fontSize={`54px`} />
               <Heading fontSize={`32px`} fontWeight={`500`}>
                 No User Found
@@ -133,6 +135,7 @@ export const CompleteRegistrationPage = ({ details, community, token }) => {
         </Box>
       </Center>
       <Flex
+        w={`100%`}
         justify={`space-between`}
         gap={`10px`}
         fontWeight={`500`}
@@ -143,7 +146,7 @@ export const CompleteRegistrationPage = ({ details, community, token }) => {
         flexWrap={`wrap`}
         maxW={`1170px`}
         mx={`auto`}
-        padding={{ base: `16px`, md: `40px 0px` }}
+        padding={{ base: `16px`, md: `40px 0px 20px` }}
         color={`text.3`}
       >
         <Text>Copyright © 2022 Essex Management. All rights reserved.</Text>
@@ -158,6 +161,6 @@ export const CompleteRegistrationPage = ({ details, community, token }) => {
           </Flex>
         </HStack>
       </Flex>
-    </Box>
+    </Stack>
   );
 };
